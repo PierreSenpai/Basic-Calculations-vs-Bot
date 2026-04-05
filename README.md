@@ -8,7 +8,7 @@ Windows (Powershell):
 # compile
 javac -d out (Get-ChildItem -Recurse -Filter *.java | ForEach-Object { $_.FullName })
 # run
-java - cp out com.pierre.basic.calculations.vs.bot.Main
+java -cp out com.pierre.basic.calculations.vs.bot.Main
 ```
 
 Linux (Bash):
