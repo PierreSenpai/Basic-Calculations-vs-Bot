@@ -1,6 +1,9 @@
 # Basic-Calculations-vs-Bot 🤖
 Can you solve simple calculations faster than a bot? Find it out in this little CLI game!
 
+## Features
+- Simultaneously running bot that takes 1-5s per question
+
 ## How to run
 
 Windows (Powershell):
@@ -19,9 +22,6 @@ javac -d out @sources.txt
 # run
 java -cp out com.pierre.basic.calculations.vs.bot.Main
 ```
-
-## Features
-- Simultaneously running bot that takes 1-5s per question
 
 ## Tech Stack
 - Java
