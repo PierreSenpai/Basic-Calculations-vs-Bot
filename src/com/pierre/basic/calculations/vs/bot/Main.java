@@ -8,11 +8,11 @@ public class Main {
         Bot bot = new Bot();
 
         for (int i = 3; i > 0; i--) {
-            System.out.println(i);
+            System.out.print("\r" + i);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ie) {}
         }
-        System.out.println("Game starts!");
+        System.out.println("\rGame starts!");
     }
 }
