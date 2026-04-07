@@ -1,6 +1,14 @@
 package com.pierre.basic.calculations.vs.bot;
 
 public class Main {
+    public int[][] questions;
+
+    public Main(int nQuestions) {
+        questions = new int[nQuestions][];
+        for (int i = 0; i < nQuestions; i++) {
+            questions[i] = generateQuestion();
+        }
+    }
 
     private int[] generateQuestion() {
         // op: 0 = add, 1 = sub, 2 = mul
@@ -32,11 +40,18 @@ public class Main {
     public static void main(String[] args) {
         int nQuestions = 20;
 
-        Main game = new Main();
+        Main game = new Main(nQuestions);
         User user = new User();
         Bot bot = new Bot(nQuestions);
 
-        for (int n : game.generateQuestion()) {System.out.println(n);}
+        // test output
+        for (int[] arr : game.questions) {
+            for (int n : arr) {
+                System.out.println(n);
+
+            }
+            System.out.println("---");
+        }
 
         // countdown
         for (int i = 3; i > 0; i--) {
