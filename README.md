@@ -3,7 +3,9 @@ Can you solve simple calculations faster than a bot? Find it out in this little 
 
 ## Features
 - Simultaneously running bot that takes 1-5s per question
-
+- Generate simple questions involving addition, subtraction, multiplication or division
+- Support negative numbers
+- Prompt user to answer them
 ## How to run
 
 Windows (Powershell):
@@ -27,8 +29,6 @@ java -cp out com.pierre.basic.calculations.vs.bot.Main
 - Java
 
 ## Roadmap
-- Generating random questions
 - Implementing User class
-- Supporting multiplication
-- Supporting division
-- Including negative starting numbers
+- Punishment for User failure
+
