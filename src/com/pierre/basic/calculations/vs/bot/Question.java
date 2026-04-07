@@ -2,8 +2,8 @@ package com.pierre.basic.calculations.vs.bot;
 
 public class Question {
     // format: a [op] b = res
-    public int a;
-    public int b;
+    public String a;
+    public String b;
     public char op;
     public int res;
 
@@ -15,22 +15,31 @@ public class Question {
         op = operators [opNum];
 
         // numbers
-        a = (int) Math.round(Math.random() * 20);
-        b = (int) Math.round(Math.random() * 20);
+        int num1 = (int) Math.round(Math.random() * 40) - 20;
+        int num2 = (int) Math.round(Math.random() * 40) - 20;
 
         // calculate result
         switch (op) {
             case '+':
-                res = a + b;
+                res = num1 + num2;
                 break;
             case '-':
-                res = a - b;
+                res = num1 - num2;
                 break;
             case '*':
-                res = a * b;
+                res = num1 * num2;
                 break;
             default:
                 res = 0;
         }
+
+        // surround negative numbers with parentheses
+        if (num1 < 0) {
+            a = "(" + num1 + ")";
+        } else { a = String.valueOf(num1); }
+
+        if (num2 < 0) {
+            b = "(" + num2 + ")";
+        } else { b = String.valueOf(num2); }
     }
 }
