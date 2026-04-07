@@ -1,42 +1,15 @@
 package com.pierre.basic.calculations.vs.bot;
 
 public class Main {
-    public int[][] questions;
+    public Question[] questions;
 
     public Main(int nQuestions) {
-        questions = new int[nQuestions][];
+        questions = new Question[nQuestions];
         for (int i = 0; i < nQuestions; i++) {
-            questions[i] = generateQuestion();
+            questions[i] = new Question();
         }
     }
 
-    private int[] generateQuestion() {
-        // op: 0 = add, 1 = sub, 2 = mul
-        int op = (int) Math.round(Math.random() * 2);
-        return generateQuestion(op);
-    }
-
-    private int[] generateQuestion(int op) {
-        // a [op] b = res
-        int a = (int) Math.round(Math.random() * 20);
-        int b = (int) Math.round(Math.random() * 20);
-        int res;
-
-        switch (op) {
-            // add
-            case 0: res = a + b;
-                    break;
-            // sub
-            case 1: res = a - b;
-                    break;
-            // mul
-            case 2: res = a * b;
-                    break;
-            default: res = 0;
-        }
-
-        return new int[]{a, b, op, res};
-    }
     public static void main(String[] args) {
         int nQuestions = 20;
 
@@ -45,12 +18,8 @@ public class Main {
         Bot bot = new Bot(nQuestions);
 
         // test output
-        for (int[] arr : game.questions) {
-            for (int n : arr) {
-                System.out.println(n);
-
-            }
-            System.out.println("---");
+        for (Question q : game.questions) {
+            System.out.println(String.format("%s %c %s = %s", q.a, q.op, q.b, q.res));
         }
 
         // countdown

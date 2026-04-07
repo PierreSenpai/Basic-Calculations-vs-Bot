@@ -3,7 +3,7 @@ Can you solve simple calculations faster than a bot? Find it out in this little 
 
 ## Features
 - Simultaneously running bot that takes 1-5s per question
-
+- Generating questions (`a (+|-|*) b = ?`)
 ## How to run
 
 Windows (Powershell):
