@@ -1,5 +1,7 @@
 package com.pierre.basic.calculations.vs.bot;
 
+import java.util.Scanner;
+
 public class Main {
     public Question[] questions;
 
@@ -12,6 +14,7 @@ public class Main {
 
     public static void main(String[] args) {
         int nQuestions = 20;
+        Scanner scanner = new Scanner(System.in);
 
         Main game = new Main(nQuestions);
         User user = new User();
@@ -19,7 +22,7 @@ public class Main {
 
         // test output
         for (Question q : game.questions) {
-            System.out.println(String.format("%s %c %s = %s", q.a, q.op, q.b, q.res));
+            System.out.println(q.askQuestion(scanner));
         }
 
         // countdown

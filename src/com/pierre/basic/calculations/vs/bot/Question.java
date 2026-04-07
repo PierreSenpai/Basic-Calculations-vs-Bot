@@ -1,5 +1,7 @@
 package com.pierre.basic.calculations.vs.bot;
 
+import java.util.Scanner;
+
 public class Question {
     // format: a [op] b = res
     public String a;
@@ -12,7 +14,7 @@ public class Question {
     public Question() {
         // op: 0 = add, 1 = sub, 2 = mul, 3 = div
         int opNum = (int) Math.round(Math.random() * 3);
-        op = operators [opNum];
+        op = operators[opNum];
         int num1, num2;
 
         // loop to ensure that division has nice result
@@ -34,10 +36,10 @@ public class Question {
                     break;
                 case '/':
                     // division by zero
-                    if (num2 == 0) {continue;}
+                    if (num2 == 0) { continue; }
                     res = num1 / num2;
                     // if division results in truncated float
-                    if (res * num2 != num1) {continue;}
+                    if (res * num2 != num1) { continue; }
                     break;
                 default:
                     res = 0;
@@ -52,5 +54,13 @@ public class Question {
         if (num2 < 0) {
             b = "(" + num2 + ")";
         } else { b = String.valueOf(num2); }
+    }
+
+    public boolean askQuestion(Scanner scanner) {
+        // returns whether user answers correctly
+        System.out.print(String.format("%s %c %s = ", a, op, b));
+        int answer = scanner.nextInt();
+        scanner.nextLine(); // clear buffer
+        return answer == res;
     }
 }
