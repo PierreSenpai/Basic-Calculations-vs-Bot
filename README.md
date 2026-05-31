@@ -31,4 +31,4 @@ java -cp out com.pierre.basic.calculations.vs.bot.Main
 ## Roadmap
 - Implementing User class
 - Punishment for User failure
-
+- MMR System
