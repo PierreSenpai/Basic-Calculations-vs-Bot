@@ -1,4 +1,4 @@
-package com.pierre.basic.calculations.vs.bot;
+package com.pierrewalther;
 
 public class Bot extends Thread {
     private int nQuestions;

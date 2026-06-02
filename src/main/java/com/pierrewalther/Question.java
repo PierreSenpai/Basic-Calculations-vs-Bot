@@ -1,5 +1,4 @@
-package com.pierre.basic.calculations.vs.bot;
-
+package com.pierrewalther;
 import java.util.Scanner;
 
 public class Question {
